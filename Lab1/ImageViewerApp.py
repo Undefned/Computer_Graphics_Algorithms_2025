@@ -104,7 +104,7 @@ class ImageViewerApp:
                 if file.lower().endswith(image_extensions):
                     image_files.append(os.path.join(folder_path, file))
             
-            # Сортируем файлы для consistency
+            # Сортируем файлы
             image_files.sort()
             
             if not image_files:

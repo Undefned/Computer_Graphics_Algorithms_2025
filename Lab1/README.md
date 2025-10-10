@@ -21,7 +21,7 @@ A simple image viewer application built with Python and Tkinter for viewing imag
 - GIF (.gif)
 
 <p align="left">
-  <img src="Images/Example.png" width="500"/>
+  <img src="ForReadme/Example.png" width="500"/>
 </p>
 
 ### Installation
