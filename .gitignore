@@ -1,155 +1,23 @@
-# ============================================
-# Игнорировать системные файлы и временные файлы
-# ============================================
-
-# Игнорируемые папки проекта
-build/
-bin/
-obj/
-*.user
-*.suo
-*.sdf
-*.opensdf
-*.VC.db
-*.VC.opendb
+# ========== Visual Studio ==========
 .vs/
-Debug/
-Release/
-x64/
-x86/
-Win32/
-out/
-dist/
-
-# Файлы IDE
-*.vcxproj
-*.vcxproj.filters
-*.sln
+*.suo
+*.user
+*.userosscache
 *.sln.docstates
 *.vcxproj.user
-*.cmake
-CMakeSettings.json
+*.VC.db
+*.VC.VC.opendb
+*.VC.opendb
 
-# Файлы компиляции
-*.o
-*.obj
-*.pch
-*.ilk
-*.pdb
-*.lib
-*.dll
-*.exp
-*.idb
-*.ipch
-*.res
-*.tlog
-*.lastbuildstate
-*.cache
-
-# Исключения для исполняемых файлов (НЕ игнорируем)
-# !*.exe  # РАСКОММЕНТИРОВАТЬ если хотите включить .exe в репозиторий
-
-# ============================================
-# ОСТАВЛЯЕМ В РЕПОЗИТОРИИ (важные файлы)
-# ============================================
-
-# !CMakeLists.txt        # Файл сборки CMake
-# !*.cpp                 # Исходные файлы
-# !*.h                   # Заголовочные файлы
-# !*.hpp
-# !README.md             # Документация
-# !LICENSE               # Лицензия
-# !dependencies/         # Папка с библиотеками
-# !libs/                 # Папка с библиотеками
-# !assets/               # Папка с ресурсами
-# !shaders/              # Папка с шейдерами
-
-# ============================================
-# Дополнительные исключения для разных систем
-# ============================================
-
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Linux
-*~
-
-# Visual Studio Code
-.vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# CLion
-.idea/
-*.iws
-*.iml
-*.ipr
-
-# Qt Creator
-*.pro.user
-*.pro.user.*
-
-# Autotools
-autom4te.cache
-aclocal.m4
-compile
-config.guess
-config.h.in
-config.sub
-configure
-depcomp
-install-sh
-ltmain.sh
-missing
-Makefile.in
-stamp-h1
-
-# ============================================
-# Файлы документации
-# ============================================
-
-# Doxygen
-docs/html/
-docs/latex/
-Doxyfile
-
-# ============================================
-# Зависимости (игнорируем скачанные, но не свои)
-# ============================================
-
-# NuGet пакеты
-packages/
-*.nupkg
-
-# vcpkg
-vcpkg_installed/
-vcpkg/
-
-# Conan
-.conan/
-.conanfile_lock
-
-# ============================================
-# Файлы проекта
-# ============================================
-
-# Прекомпилированные заголовки
-*.gch
-
-# Логи
-*.log
-
-# Тестовые данные
-test_data/
-*.test
+# ========== Python ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
