@@ -6,10 +6,25 @@ struct C3E3f_Output {
 };
 
 C3E3f_Output C3E3f_texture(float2 texCoord : TEXCOORD0,
-                           uniform sampler2D decal : TEX0)
+                           uniform sampler2D decal : TEX0,
+                           uniform int displayMode : TEX1)
 {
   C3E3f_Output OUT;
-  OUT.color = tex2D(decal,texCoord);
+  
+
+  if (displayMode == 0) {
+    OUT.color = tex2D(decal, texCoord);
+  }
+  else if (displayMode == 1) {
+    OUT.color = float4(texCoord.x, texCoord.y, 0.0, 1.0);
+  }
+  else if (displayMode == 2) {
+    float2 transformed = 0.5 * texCoord + float2(0.5, 0.5);
+    OUT.color = float4(transformed.x, transformed.y, 0.0, 1.0);
+  }
+  else {
+    OUT.color = tex2D(decal, texCoord);
+  }
+  
   return OUT;
 }
-

@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<author>ddeni</author>
+			<authoring_tool>NVIDIA FX Composer 2.5</authoring_tool>
+			<comments/>
+			<copyright/>
+		</contributor>
+		<created>2025-12-22T22:10:08Z</created>
+		<keywords>FXComposer, NVIDIA</keywords>
+		<modified>2025-12-23T01:34:39Z</modified>
+		<subject/>
+		<title/>
+		<unit/>
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_visual_scenes>
+		<visual_scene id="DefaultScene" name="DefaultScene">
+			<node id="Node" name="Node" layer="">
+				<matrix sid="">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+				<matrix sid="FXComposer2DiffMatrix">1 0 0 -3.48471 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+				<extra type="orcaware">
+					<technique profile="NVIDIA">
+						<instance_visual_model id="ModelInstance" name="model_for_cga" url="#Model">
+							<instance_visual_style url="#VisualStyle2"/>
+						</instance_visual_model>
+					</technique>
+				</extra>
+			</node>
+			<node id="Node1" name="Node1" layer="">
+				<matrix>0.0112405 0 0.999937 2.01289 0 1 0 0 -0.999937 0 0.0112405 0 0 0 0 1</matrix>
+				<instance_light url="#SpotLight" sid="Light" name="SpotLight"/>
+			</node>
+			<node id="Node2" name="Node2" layer="">
+				<matrix>1 0 0 -0.684783 0 1 0 0 0 0 1 4.78131 0 0 0 1</matrix>
+				<instance_camera url="#PerspectiveCamera" sid="Camera" name="PerspectiveCamera"/>
+			</node>
+			<extra type="evaluatescene_enables">
+				<technique profile="NVIDIA_FXCOMPOSER"/>
+			</extra>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_images>
+		<image id="top-view-tree-bark" name="top-view-tree-bark">
+			<init_from>../../../../Downloads/top-view-tree-bark.jpg</init_from>
+		</image>
+		<image id="default_color" name="default_color">
+			<init_from>../../../../../../program%20files%20(x86)/nvidia%20corporation/fx%20composer%202.5/media/textures/default_color.dds</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="Material" name="Material">
+			<instance_effect url=""/>
+		</material>
+		<material id="ColorShader" name="ColorShader_Material">
+			<instance_effect url="#Effect">
+				<technique_hint platform="PC-D3D" ref="tech0"/>
+				<setparam ref="WorldViewProj">
+					<float4x4>0 0 0 0 0 0 0 0 0 0 0 -1.001 0 0 0 0</float4x4>
+				</setparam>
+				<setparam ref="DiffuseMap">
+					<surface type="2D">
+						<init_from>top-view-tree-bark</init_from>
+						<format>R8G8B8</format>
+						<size>4000 6000 1</size>
+					</surface>
+				</setparam>
+			</instance_effect>
+		</material>
+		<material id="New_Effect" name="New_Effect_Material">
+			<instance_effect url="#Effect1"/>
+		</material>
+		<material id="Phong" name="Phong_Material">
+			<instance_effect url="#Effect2">
+				<technique_hint platform="PC-D3D" ref="Main"/>
+				<technique_hint platform="PC-D3D10" ref="Main10"/>
+				<setparam ref="Script">
+					<float>0.8</float>
+				</setparam>
+				<setparam ref="WorldITXf">
+					<float4x4>0 0 0 0 0 0 0 0 0 0 0 0 -0.684783 0 4.78131 1</float4x4>
+				</setparam>
+				<setparam ref="WvpXf">
+					<float4x4>0 0 0 0 0 0 0 0 0 0 0 -1.001 0 0 0 0</float4x4>
+				</setparam>
+				<setparam ref="WorldXf">
+					<float4x4>0 0 0 -0.684783 0 0 0 0 0 0 0 4.78131 0 0 0 1</float4x4>
+				</setparam>
+				<setparam ref="ViewIXf">
+					<float4x4>1 0 -0 -0.684783 0 1 -0 0 0 0 1 4.78131 0 0 -0 1</float4x4>
+				</setparam>
+				<setparam ref="Lamp0Pos">
+					<float3>2 2 2</float3>
+				</setparam>
+				<setparam ref="Lamp0Color">
+					<float4>1 1 1 1</float4>
+				</setparam>
+				<setparam ref="AmbiColor">
+					<float3>0.07 0.07 0.07</float3>
+				</setparam>
+				<setparam ref="Ks">
+					<float>0.4</float>
+				</setparam>
+				<setparam ref="SpecExpon">
+					<float>55</float>
+				</setparam>
+				<setparam ref="ColorTexture">
+					<surface type="2D">
+						<init_from>default_color</init_from>
+						<format>R8G8B8A8</format>
+						<size>1024 512 1</size>
+					</surface>
+				</setparam>
+			</instance_effect>
+		</material>
+		<material id="Material3" name="Phong_Material1">
+			<instance_effect url="#Effect2">
+				<technique_hint platform="PC-D3D" ref="Main"/>
+				<technique_hint platform="PC-D3D10" ref="Main10"/>
+				<setparam ref="Script">
+					<float>0.8</float>
+				</setparam>
+				<setparam ref="WorldITXf">
+					<float4x4>0 0 0 0 0 0 0 0 0 0 0 0 -0.684783 0 4.78131 1</float4x4>
+				</setparam>
+				<setparam ref="WvpXf">
+					<float4x4>0 0 0 0 0 0 0 0 0 0 0 -1.001 0 0 0 0</float4x4>
+				</setparam>
+				<setparam ref="WorldXf">
+					<float4x4>0 0 0 -0.684783 0 0 0 0 0 0 0 4.78131 0 0 0 1</float4x4>
+				</setparam>
+				<setparam ref="ViewIXf">
+					<float4x4>1 0 -0 -0.684783 0 1 -0 0 0 0 1 4.78131 0 0 -0 1</float4x4>
+				</setparam>
+				<setparam ref="Lamp0Pos">
+					<float3>2.01289 0 0</float3>
+				</setparam>
+				<setparam ref="Lamp0Color">
+					<float4>1 1 1 1</float4>
+				</setparam>
+				<setparam ref="AmbiColor">
+					<float3>0.07 0.07 0.07</float3>
+				</setparam>
+				<setparam ref="Ks">
+					<float>0.4</float>
+				</setparam>
+				<setparam ref="SpecExpon">
+					<float>55</float>
+				</setparam>
+				<setparam ref="ColorTexture">
+					<surface type="2D">
+						<init_from>default_color</init_from>
+						<format>R8G8B8A8</format>
+						<size>1024 512 1</size>
+					</surface>
+				</setparam>
+			</instance_effect>
+		</material>
+	</library_materials>
+	<library_effects>
+		<effect id="Effect" name="ColorShader">
+			<profile_COMMON>
+				<technique sid="__fxc_remove_profile_COMMON">
+					<constant/>
+				</technique>
+			</profile_COMMON>
+			<extra type="import">
+				<technique profile="NVIDIA_FXCOMPOSER">
+					<import url="ColorShader.fx" compiler_options="" profile="fx"/>
+				</technique>
+			</extra>
+		</effect>
+		<effect id="Effect1" name="New_Effect">
+			<profile_COMMON>
+				<technique sid="__fxc_remove_profile_COMMON">
+					<constant/>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="Effect2" name="Phong">
+			<profile_COMMON>
+				<technique sid="__fxc_remove_profile_COMMON">
+					<constant/>
+				</technique>
+			</profile_COMMON>
+			<extra type="import">
+				<technique profile="NVIDIA_FXCOMPOSER">
+					<import url="Phong.fx" compiler_options="" profile="fx"/>
+				</technique>
+			</extra>
+		</effect>
+	</library_effects>
+	<library_lights>
+		<light id="SpotLight" name="SpotLight">
+			<technique_common>
+				<spot>
+					<color>1 1 1</color>
+					<constant_attenuation>1</constant_attenuation>
+					<linear_attenuation>0</linear_attenuation>
+					<quadratic_attenuation>0</quadratic_attenuation>
+					<falloff_angle>80</falloff_angle>
+					<falloff_exponent>0</falloff_exponent>
+				</spot>
+			</technique_common>
+		</light>
+	</library_lights>
+	<library_cameras>
+		<camera id="PerspectiveCamera" name="PerspectiveCamera">
+			<optics>
+				<technique_common>
+					<perspective>
+						<yfov>30.0752</yfov>
+						<aspect_ratio>1.33</aspect_ratio>
+						<znear>1</znear>
+						<zfar>1000</zfar>
+					</perspective>
+				</technique_common>
+			</optics>
+		</camera>
+	</library_cameras>
+	<scene>
+		<instance_visual_scene url="#DefaultScene"/>
+	</scene>
+	<extra type="orcaware">
+		<technique profile="NVIDIA">
+			<library_visual_models>
+				<visual_model id="Model" name="model_for_cga">
+					<instance_visual_scene url="cache-model_for_cga-c45ecae7-6b2c-433d-bf68-70064b423f11.dae#Scene"/>
+					<visual_style_ref name="VisualStyle" url="#VisualStyle"/>
+					<visual_style_ref name="VisualStyle1" url="#VisualStyle1"/>
+					<visual_style_ref name="VisualStyle2" url="#VisualStyle2"/>
+				</visual_model>
+			</library_visual_models>
+			<library_visual_styles>
+				<visual_style id="VisualStyle" name="VisualStyle" scene="cache-model_for_cga-c45ecae7-6b2c-433d-bf68-70064b423f11.dae#Scene">
+					<owner ref="Node">
+						<swap_material symbol="obj_file_default_material" target="#Material">
+							<extra type="bind_object">
+								<technique profile="NVIDIA_FXCOMPOSER"/>
+							</extra>
+						</swap_material>
+					</owner>
+				</visual_style>
+				<visual_style id="VisualStyle1" name="VisualStyle1" scene="cache-model_for_cga-c45ecae7-6b2c-433d-bf68-70064b423f11.dae#Scene">
+					<owner ref="Node">
+						<swap_material symbol="obj_file_default_material" target="#ColorShader">
+							<extra type="bind_object">
+								<technique profile="NVIDIA_FXCOMPOSER"/>
+							</extra>
+						</swap_material>
+					</owner>
+				</visual_style>
+				<visual_style id="VisualStyle2" name="VisualStyle2" scene="cache-model_for_cga-c45ecae7-6b2c-433d-bf68-70064b423f11.dae#Scene">
+					<owner ref="Node">
+						<swap_material symbol="obj_file_default_material" target="#Material3">
+							<extra type="bind_object">
+								<technique profile="NVIDIA_FXCOMPOSER">
+									<bind_object object="pointlight0" target="Node1" sid="Light"/>
+								</technique>
+							</extra>
+						</swap_material>
+					</owner>
+				</visual_style>
+			</library_visual_styles>
+		</technique>
+	</extra>
+</COLLADA>

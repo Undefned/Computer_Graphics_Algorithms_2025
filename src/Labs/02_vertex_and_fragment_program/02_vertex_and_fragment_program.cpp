@@ -170,6 +170,24 @@ myStarList[] = {
     {   0.60f, -0.5f,  6,     0.25f,  0.11f }
 };
 
+StarList myTriangleListStarList[] = {
+    /*                star    outer   inner  */
+    /*  x       y     Points  radius  radius */
+    /* =====   =====  ======  ======  ====== */
+    {   0.0f,   0,     5,     0.3f,   0.15f },    // Уменьшил размер для Triangle List
+    {  -0.70f,  0.1f,  4,     0.25f,  0.12f },
+    {   0.60f, -0.5f,  6,     0.2f,   0.1f }
+};
+
+StarList myTriangleStripStarList[] = {
+    /*                star    outer   inner  */
+    /*  x       y     Points  radius  radius */
+    /* =====   =====  ======  ======  ====== */
+    {   0.0f,   0,     4,     0.3f,   0.15f },    // Для Triangle Strip лучше четное число лучей
+    {  -0.70f,  0.1f,  4,     0.25f,  0.12f },
+    {   0.60f, -0.5f,  4,     0.2f,   0.1f }
+};
+
 static int myStarCount = sizeof(myStarList)/sizeof(myStarList[0]);
 
 struct MY_V3F {

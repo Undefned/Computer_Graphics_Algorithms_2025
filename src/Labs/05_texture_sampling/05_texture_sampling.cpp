@@ -20,6 +20,7 @@ static CGprofile   myCgVertexProfile,
 static CGprogram   myCgVertexProgram,
                    myCgFragmentProgram;
 static CGparameter myCgFragmentParam_decal;      
+static CGparameter myCgFragmentParam_displayMode;
 
 static PDIRECT3DVERTEXBUFFER9 myVertexBuffer = NULL;
 static PDIRECT3DTEXTURE9 myTexture = NULL;
@@ -31,10 +32,12 @@ static const char *myProgramName = "05_texture_sampling",
                   *myFragmentProgramFileName = "C3E3f_texture.cg",
 /* Page 67 */     *myFragmentProgramName = "C3E3f_texture";
 
+static int currentMode = 0;
+
 static const unsigned char
 myDemonTextureImage[3*(128*128+64*64+32*32+16*16+8*8+4*4+2*2+1*1)] = {
 /* RGB8 image data for a mipmapped 128x128 demon texture */
-#include "demon_image.h"
+#include "sunshine.h" // for change texture
 };
 
 static void checkForCgError(const char *situation)
@@ -78,6 +81,7 @@ static void checkForCgError(const char *situation)
 static HRESULT CALLBACK OnResetDevice(IDirect3DDevice9*, const D3DSURFACE_DESC*, void*);
 static void CALLBACK OnFrameRender(IDirect3DDevice9*, double, float, void*);
 static void CALLBACK OnLostDevice(void*);
+static void CALLBACK OnKeyboard(UINT nChar, bool bKeyDown, bool bAltDown, void* pUserContext);
 
 INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -88,6 +92,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
   DXUTSetCallbackDeviceReset(OnResetDevice);
   DXUTSetCallbackDeviceLost(OnLostDevice);
   DXUTSetCallbackFrameRender(OnFrameRender);
+  DXUTSetCallbackKeyboard(OnKeyboard);
 
   /* Parse  command line, handle  default hotkeys, and show messages. */
   DXUTInit();
@@ -149,6 +154,10 @@ static void createCgPrograms()
   myCgFragmentParam_decal =
     cgGetNamedParameter(myCgFragmentProgram, "decal");
   checkForCgError("getting decal parameter");
+
+  myCgFragmentParam_displayMode =
+      cgGetNamedParameter(myCgFragmentProgram, "displayMode");
+  checkForCgError("getting displayMode parameter");
 }
 
 struct MY_V3F_T2F {
@@ -265,6 +274,9 @@ static void CALLBACK OnFrameRender(IDirect3DDevice9* pDev,
 
     cgD3D9SetTexture(myCgFragmentParam_decal, myTexture);  
 
+    cgSetParameter1i(myCgFragmentParam_displayMode, currentMode);
+    checkForCgError("setting display mode");
+
     cgD3D9BindProgram(myCgFragmentProgram);
     checkForCgError("binding fragment program");
 
@@ -287,4 +299,27 @@ static void CALLBACK OnLostDevice(void* userContext)
   myVertexBuffer->Release();
   myTexture->Release();
   cgD3D9SetDevice(NULL);
+}
+
+static void CALLBACK OnKeyboard(UINT nChar, bool bKeyDown, bool bAltDown, void* pUserContext)
+{
+    if (!bKeyDown) return; // handle only click on buttons
+
+    switch (nChar) {
+    case VK_ESCAPE:  // Esc
+        PostQuitMessage(0);
+        break;
+    case '1':
+        currentMode = 0;
+        break;
+    case '2':
+        currentMode = 1;
+        break;
+    case '3':
+        currentMode = 2;
+        break;
+    case VK_SPACE:
+        currentMode = (currentMode + 1) % 3;
+        break;
+    }
 }
