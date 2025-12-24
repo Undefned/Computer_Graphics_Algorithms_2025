@@ -1,0 +1,109 @@
+<project>
+  <current_configuration value="Debug" />
+  <configurations>
+    <configuration name="Debug">
+      <settings category="Project\Direct3D\HLSL Compiler">
+        <CompilerOptions value="" />
+      </settings>
+      <settings category="Project\Direct3D10\HLSL Compiler">
+        <CompilerOptions value="" />
+      </settings>
+      <settings category="Project\OpenGL\CgCompiler">
+        <CompilerOptions value="" />
+      </settings>
+      <settings category="Project\Paths">
+        <Includes value="" />
+        <Models value="" />
+        <Scripts value="" />
+        <Shaders value="" />
+        <Textures value="" />
+      </settings>
+      <settings category="Project\Settings">
+        <BindLightToUnboundMaterials value="False" />
+      </settings>
+      <settings category="Project\COLLADA Common Profile">
+        <EnvironmentMap value="" />
+        <DisableCommonProfileTransparency value="False" />
+      </settings>
+    </configuration>
+    <configuration name="Release">
+      <settings category="Project\Direct3D\HLSL Compiler">
+        <CompilerOptions value="" />
+      </settings>
+      <settings category="Project\Direct3D10\HLSL Compiler">
+        <CompilerOptions value="" />
+      </settings>
+      <settings category="Project\OpenGL\CgCompiler">
+        <CompilerOptions value="" />
+      </settings>
+      <settings category="Project\Paths">
+        <Includes value="" />
+        <Models value="" />
+        <Scripts value="" />
+        <Shaders value="" />
+        <Textures value="" />
+      </settings>
+      <settings category="Project\Settings">
+        <BindLightToUnboundMaterials value="False" />
+      </settings>
+      <settings category="Project\COLLADA Common Profile">
+        <EnvironmentMap value="" />
+        <DisableCommonProfileTransparency value="False" />
+      </settings>
+    </configuration>
+  </configurations>
+  <assetFile uri="Document1.dae" referenced="False" />
+  <assetFile uri="cache-model_for_cga-0a07f46b-3b63-4040-9cca-780f1e69c0c2.dae" referenced="True" />
+  <activeAssetCollection uri="Document1.dae" />
+  <customConfigurations>
+    <FXComposer.Scene.Services.FXRenderPortService>
+      <defaultScene sceneUri="Document1.dae#DefaultScene" />
+      <camera type="Top" scene="Document1.dae#DefaultScene">
+        <focallength>5.141316</focallength>
+        <fov>40</fov>
+        <zoomrect>0 0 1 1</zoomrect>
+        <viewtransform>1 0 0 0 0 5.960464E-08 -0.9999999 0 0 0.9999999 5.960464E-08 0 0 4.773602 0 1 </viewtransform>
+      </camera>
+      <camera type="Front" scene="Document1.dae#DefaultScene">
+        <focallength>5.141316</focallength>
+        <fov>40</fov>
+        <zoomrect>0 0 1 1</zoomrect>
+        <viewtransform>1 0 0 0 0 1 0 0 0 0 1 0 0 -0.3677144 5.141316 1 </viewtransform>
+      </camera>
+      <camera type="Right" scene="Document1.dae#DefaultScene">
+        <focallength>5.141316</focallength>
+        <fov>40</fov>
+        <zoomrect>0 0 1 1</zoomrect>
+        <viewtransform>5.960464E-08 0 -0.9999999 0 0 1 0 0 0.9999999 0 5.960464E-08 0 5.141316 -0.3677144 0 1 </viewtransform>
+      </camera>
+      <camera type="Perspective" scene="Document1.dae#DefaultScene">
+        <focallength>7.135365</focallength>
+        <fov>40</fov>
+        <zoomrect>0 0 1 1</zoomrect>
+        <viewtransform>0.6873534 1.043858E-07 0.7263231 0 0.419343 0.8164965 -0.3968442 0 -0.5930403 0.5773507 0.5612216 0 -4.231559 3.751894 4.004518 1 </viewtransform>
+      </camera>
+      <renderPort name="Render" />
+    </FXComposer.Scene.Services.FXRenderPortService>
+    <FXComposer.Scene.Services.FXSceneService>
+      <grid_settings sceneUri="Document1.dae#DefaultScene">
+        <show_grid value="True" />
+        <axes_color value="0, 0, 0, 1" />
+        <size value="17.32051" />
+        <major_ticks_color value="0.25, 0.25, 0.25, 1" />
+        <major_tick_every_nth value="10" />
+        <ticks_color value="0.425, 0.425, 0.425, 1" />
+        <ticks_interval_in_units value="0.3464102" />
+      </grid_settings>
+      <background_color color="0.5 0.5 0.5 0" />
+    </FXComposer.Scene.Services.FXSceneService>
+    <FXComposer.Debugger.DebuggerService>
+      <settings>
+        <fragkill mode="Off" color="1, 0, 1, 1" />
+        <enablealpha value="False" />
+        <singlepixelmode enabled="False" pixelID="0, 0" />
+      </settings>
+      <profiles />
+      <files />
+    </FXComposer.Debugger.DebuggerService>
+  </customConfigurations>
+</project>

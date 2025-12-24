@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<author>ddeni</author>
+			<authoring_tool>NVIDIA FX Composer 2.5</authoring_tool>
+			<comments/>
+			<copyright/>
+		</contributor>
+		<created>2025-12-23T22:03:22Z</created>
+		<keywords>FXComposer, NVIDIA</keywords>
+		<modified>2025-12-24T00:58:46Z</modified>
+		<subject/>
+		<title/>
+		<unit/>
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_visual_scenes>
+		<visual_scene id="DefaultScene" name="DefaultScene">
+			<node id="Node" name="Node" layer="">
+				<matrix>1 0 0 0 0 1 0 0 0 0 1 -0.0340369 0 0 0 1</matrix>
+				<extra type="orcaware">
+					<technique profile="NVIDIA">
+						<instance_visual_model id="ModelInstance" name="model_for_cga" url="#Model">
+							<instance_visual_style url="#VisualStyle"/>
+						</instance_visual_model>
+					</technique>
+				</extra>
+			</node>
+			<extra type="evaluatescene_enables">
+				<technique profile="NVIDIA_FXCOMPOSER"/>
+			</extra>
+		</visual_scene>
+	</library_visual_scenes>
+	<library_images>
+		<image id="default_color" name="default_color">
+			<init_from>../../../../../../../program%20files%20(x86)/nvidia%20corporation/fx%20composer%202.5/media/textures/default_color.dds</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="Effect" name="Phong">
+			<profile_COMMON>
+				<technique sid="__fxc_remove_profile_COMMON">
+					<constant/>
+				</technique>
+			</profile_COMMON>
+			<extra type="import">
+				<technique profile="NVIDIA_FXCOMPOSER">
+					<import url="Phong.fx" compiler_options="" profile="fx"/>
+				</technique>
+			</extra>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="Material" name="Material">
+			<instance_effect url=""/>
+		</material>
+		<material id="Phong" name="Phong_Material">
+			<instance_effect url="#Effect">
+				<technique_hint platform="PC-D3D" ref="Main"/>
+				<technique_hint platform="PC-D3D10" ref="Main10"/>
+				<setparam ref="Script">
+					<float>0.8</float>
+				</setparam>
+				<setparam ref="WorldITXf">
+					<float4x4>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.0340369 1</float4x4>
+				</setparam>
+				<setparam ref="WvpXf">
+					<float4x4>0.669635 2.48856e-007 0.7076 -0.0240822 1.15214 2.24331 -1.09032 0.862002 0.593076 -0.577386 -0.561256 6.94064 0.59304 -0.57735 -0.561221 6.94217</float4x4>
+				</setparam>
+				<setparam ref="WorldXf">
+					<float4x4>1 0 0 0 0 1 0 0 0 0 1 -0.0340369 0 0 0 1</float4x4>
+				</setparam>
+				<setparam ref="ViewIXf">
+					<float4x4>0.687353 0.419343 -0.59304 -4.23156 2.46191e-007 0.816496 0.577351 3.75189 0.726323 -0.396844 0.561222 4.00452 0 0 -0 1</float4x4>
+				</setparam>
+				<setparam ref="Lamp0Pos">
+					<float3>-0.5 2 1.25</float3>
+				</setparam>
+				<setparam ref="Lamp0Color">
+					<float3>1 1 1</float3>
+				</setparam>
+				<setparam ref="AmbiColor">
+					<float3>0.07 0.07 0.07</float3>
+				</setparam>
+				<setparam ref="Ks">
+					<float>0.4</float>
+				</setparam>
+				<setparam ref="SpecExpon">
+					<float>55</float>
+				</setparam>
+				<setparam ref="ColorTexture">
+					<surface type="2D">
+						<init_from>default_color</init_from>
+						<format>R8G8B8A8</format>
+						<size>1024 512 1</size>
+					</surface>
+				</setparam>
+			</instance_effect>
+		</material>
+	</library_materials>
+	<scene>
+		<instance_visual_scene url="#DefaultScene"/>
+	</scene>
+	<extra type="orcaware">
+		<technique profile="NVIDIA">
+			<library_visual_models>
+				<visual_model id="Model" name="model_for_cga">
+					<instance_visual_scene url="cache-model_for_cga-0a07f46b-3b63-4040-9cca-780f1e69c0c2.dae#Scene"/>
+					<visual_style_ref name="VisualStyle" url="#VisualStyle"/>
+				</visual_model>
+			</library_visual_models>
+			<library_visual_styles>
+				<visual_style id="VisualStyle" name="VisualStyle" scene="cache-model_for_cga-0a07f46b-3b63-4040-9cca-780f1e69c0c2.dae#Scene">
+					<owner ref="Node">
+						<swap_material symbol="obj_file_default_material" target="#Phong">
+							<extra type="bind_object">
+								<technique profile="NVIDIA_FXCOMPOSER"/>
+							</extra>
+						</swap_material>
+					</owner>
+				</visual_style>
+			</library_visual_styles>
+		</technique>
+	</extra>
+</COLLADA>
